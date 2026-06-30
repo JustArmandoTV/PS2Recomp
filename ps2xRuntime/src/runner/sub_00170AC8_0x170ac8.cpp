@@ -1,0 +1,107 @@
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include "ps2_recompiled_functions.h"
+#include "ps2_recompiled_stubs.h"
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: sub_00170AC8
+// Address: 0x170ac8 - 0x170af8
+void sub_00170AC8_0x170ac8(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("sub_00170AC8_0x170ac8");
+#endif
+
+    switch (ctx->pc) {
+        case 0x170adcu: goto label_170adc;
+        case 0x170ae4u: goto label_170ae4;
+        default: break;
+    }
+
+    ctx->pc = 0x170ac8u;
+
+    // 0x170ac8: 0x27bdfff0  addiu       $sp, $sp, -0x10
+    ctx->pc = 0x170ac8u;
+    SET_GPR_S32(ctx, 29, (int32_t)ADD32(GPR_U32(ctx, 29), 4294967280));
+    // 0x170acc: 0xffb00000  sd          $s0, 0x0($sp)
+    ctx->pc = 0x170accu;
+    WRITE64(ADD32(GPR_U32(ctx, 29), 0), GPR_U64(ctx, 16));
+    // 0x170ad0: 0xffbf0008  sd          $ra, 0x8($sp)
+    ctx->pc = 0x170ad0u;
+    WRITE64(ADD32(GPR_U32(ctx, 29), 8), GPR_U64(ctx, 31));
+    // 0x170ad4: 0xc05c846  jal         func_172118
+    ctx->pc = 0x170AD4u;
+    SET_GPR_U32(ctx, 31, 0x170ADCu);
+    ctx->pc = 0x170AD8u;
+    ctx->in_delay_slot = true; ctx->branch_pc = 0x170AD4u;
+            // 0x170ad8: 0x80802d  daddu       $s0, $a0, $zero (Delay Slot)
+        SET_GPR_U64(ctx, 16, (uint64_t)GPR_U64(ctx, 4) + (uint64_t)GPR_U64(ctx, 0));
+        ctx->in_delay_slot = false;
+    ctx->pc = 0x172118u;
+    if (runtime->hasFunction(0x172118u)) {
+        auto targetFn = runtime->lookupFunction(0x172118u);
+        const uint32_t __entryPc = ctx->pc;
+        targetFn(rdram, ctx, runtime);
+        if (ctx->pc == __entryPc) { ctx->pc = 0x170ADCu; }
+        if (ctx->pc != 0x170ADCu) { return; }
+    } else {
+        const uint32_t __entryPc = ctx->pc;
+        sub_00172118_0x172118(rdram, ctx, runtime);
+        if (ctx->pc == __entryPc) { ctx->pc = 0x170ADCu; }
+        if (ctx->pc != 0x170ADCu) { return; }
+    }
+    ctx->pc = 0x170ADCu;
+label_170adc:
+    // 0x170adc: 0xc05c2be  jal         func_170AF8
+    ctx->pc = 0x170ADCu;
+    SET_GPR_U32(ctx, 31, 0x170AE4u);
+    ctx->pc = 0x170AE0u;
+    ctx->in_delay_slot = true; ctx->branch_pc = 0x170ADCu;
+            // 0x170ae0: 0x200202d  daddu       $a0, $s0, $zero (Delay Slot)
+        SET_GPR_U64(ctx, 4, (uint64_t)GPR_U64(ctx, 16) + (uint64_t)GPR_U64(ctx, 0));
+        ctx->in_delay_slot = false;
+    ctx->pc = 0x170AF8u;
+    if (runtime->hasFunction(0x170AF8u)) {
+        auto targetFn = runtime->lookupFunction(0x170AF8u);
+        const uint32_t __entryPc = ctx->pc;
+        targetFn(rdram, ctx, runtime);
+        if (ctx->pc == __entryPc) { ctx->pc = 0x170AE4u; }
+        if (ctx->pc != 0x170AE4u) { return; }
+    } else {
+        const uint32_t __entryPc = ctx->pc;
+        sub_00170AF8_0x170af8(rdram, ctx, runtime);
+        if (ctx->pc == __entryPc) { ctx->pc = 0x170AE4u; }
+        if (ctx->pc != 0x170AE4u) { return; }
+    }
+    ctx->pc = 0x170AE4u;
+label_170ae4:
+    // 0x170ae4: 0xdfb00000  ld          $s0, 0x0($sp)
+    ctx->pc = 0x170ae4u;
+    SET_GPR_U64(ctx, 16, READ64(ADD32(GPR_U32(ctx, 29), 0)));
+    // 0x170ae8: 0xdfbf0008  ld          $ra, 0x8($sp)
+    ctx->pc = 0x170ae8u;
+    SET_GPR_U64(ctx, 31, READ64(ADD32(GPR_U32(ctx, 29), 8)));
+    // 0x170aec: 0x805c84c  j           func_172130
+    ctx->pc = 0x170AECu;
+    ctx->pc = 0x170AF0u;
+    ctx->in_delay_slot = true; ctx->branch_pc = 0x170AECu;
+            // 0x170af0: 0x27bd0010  addiu       $sp, $sp, 0x10 (Delay Slot)
+        SET_GPR_S32(ctx, 29, (int32_t)ADD32(GPR_U32(ctx, 29), 16));
+        ctx->in_delay_slot = false;
+    ctx->pc = 0x172130u;
+    if (runtime->hasFunction(0x172130u)) {
+        auto targetFn = runtime->lookupFunction(0x172130u);
+        targetFn(rdram, ctx, runtime); return;
+    } else {
+        sub_00172130_0x172130(rdram, ctx, runtime); return;
+    }
+    ctx->pc = 0x170AF4u;
+    // 0x170af4: 0x0  nop
+    ctx->pc = 0x170af4u;
+    // NOP
+}

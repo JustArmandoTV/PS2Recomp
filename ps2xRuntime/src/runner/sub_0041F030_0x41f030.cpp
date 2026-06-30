@@ -1,0 +1,137 @@
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include "ps2_recompiled_functions.h"
+#include "ps2_recompiled_stubs.h"
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: sub_0041F030
+// Address: 0x41f030 - 0x41f0c0
+void sub_0041F030_0x41f030(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("sub_0041F030_0x41f030");
+#endif
+
+    ctx->pc = 0x41f030u;
+
+    // 0x41f030: 0xc4a00000  lwc1        $f0, 0x0($a1)
+    ctx->pc = 0x41f030u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 5), 0)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f034: 0xe4800000  swc1        $f0, 0x0($a0)
+    ctx->pc = 0x41f034u;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 0), bits); }
+    // 0x41f038: 0xc4a00004  lwc1        $f0, 0x4($a1)
+    ctx->pc = 0x41f038u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 5), 4)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f03c: 0xe4800004  swc1        $f0, 0x4($a0)
+    ctx->pc = 0x41f03cu;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 4), bits); }
+    // 0x41f040: 0xc4a00008  lwc1        $f0, 0x8($a1)
+    ctx->pc = 0x41f040u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 5), 8)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f044: 0xe4800008  swc1        $f0, 0x8($a0)
+    ctx->pc = 0x41f044u;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 8), bits); }
+    // 0x41f048: 0xc4a0000c  lwc1        $f0, 0xC($a1)
+    ctx->pc = 0x41f048u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 5), 12)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f04c: 0xe480000c  swc1        $f0, 0xC($a0)
+    ctx->pc = 0x41f04cu;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 12), bits); }
+    // 0x41f050: 0xc4c00000  lwc1        $f0, 0x0($a2)
+    ctx->pc = 0x41f050u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 6), 0)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f054: 0xe4800010  swc1        $f0, 0x10($a0)
+    ctx->pc = 0x41f054u;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 16), bits); }
+    // 0x41f058: 0xc4c00004  lwc1        $f0, 0x4($a2)
+    ctx->pc = 0x41f058u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 6), 4)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f05c: 0xe4800014  swc1        $f0, 0x14($a0)
+    ctx->pc = 0x41f05cu;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 20), bits); }
+    // 0x41f060: 0xc4c00008  lwc1        $f0, 0x8($a2)
+    ctx->pc = 0x41f060u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 6), 8)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f064: 0xe4800018  swc1        $f0, 0x18($a0)
+    ctx->pc = 0x41f064u;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 24), bits); }
+    // 0x41f068: 0xc4c0000c  lwc1        $f0, 0xC($a2)
+    ctx->pc = 0x41f068u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 6), 12)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f06c: 0xe480001c  swc1        $f0, 0x1C($a0)
+    ctx->pc = 0x41f06cu;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 28), bits); }
+    // 0x41f070: 0xc4e00000  lwc1        $f0, 0x0($a3)
+    ctx->pc = 0x41f070u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 7), 0)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f074: 0xe4800020  swc1        $f0, 0x20($a0)
+    ctx->pc = 0x41f074u;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 32), bits); }
+    // 0x41f078: 0xc4e00004  lwc1        $f0, 0x4($a3)
+    ctx->pc = 0x41f078u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 7), 4)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f07c: 0xe4800024  swc1        $f0, 0x24($a0)
+    ctx->pc = 0x41f07cu;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 36), bits); }
+    // 0x41f080: 0xc4e00008  lwc1        $f0, 0x8($a3)
+    ctx->pc = 0x41f080u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 7), 8)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f084: 0xe4800028  swc1        $f0, 0x28($a0)
+    ctx->pc = 0x41f084u;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 40), bits); }
+    // 0x41f088: 0xc4e0000c  lwc1        $f0, 0xC($a3)
+    ctx->pc = 0x41f088u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 7), 12)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f08c: 0xe480002c  swc1        $f0, 0x2C($a0)
+    ctx->pc = 0x41f08cu;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 44), bits); }
+    // 0x41f090: 0xc5000000  lwc1        $f0, 0x0($t0)
+    ctx->pc = 0x41f090u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 8), 0)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f094: 0xe4800030  swc1        $f0, 0x30($a0)
+    ctx->pc = 0x41f094u;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 48), bits); }
+    // 0x41f098: 0xc5000004  lwc1        $f0, 0x4($t0)
+    ctx->pc = 0x41f098u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 8), 4)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f09c: 0xe4800034  swc1        $f0, 0x34($a0)
+    ctx->pc = 0x41f09cu;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 52), bits); }
+    // 0x41f0a0: 0xc5000008  lwc1        $f0, 0x8($t0)
+    ctx->pc = 0x41f0a0u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 8), 8)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f0a4: 0xe4800038  swc1        $f0, 0x38($a0)
+    ctx->pc = 0x41f0a4u;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 56), bits); }
+    // 0x41f0a8: 0xc500000c  lwc1        $f0, 0xC($t0)
+    ctx->pc = 0x41f0a8u;
+    { uint32_t bits = READ32(ADD32(GPR_U32(ctx, 8), 12)); float f; std::memcpy(&f, &bits, sizeof(f)); ctx->f[0] = f; }
+    // 0x41f0ac: 0xe480003c  swc1        $f0, 0x3C($a0)
+    ctx->pc = 0x41f0acu;
+    { float f = ctx->f[0]; uint32_t bits; std::memcpy(&bits, &f, sizeof(bits)); WRITE32(ADD32(GPR_U32(ctx, 4), 60), bits); }
+    // 0x41f0b0: 0xac80002c  sw          $zero, 0x2C($a0)
+    ctx->pc = 0x41f0b0u;
+    WRITE32(ADD32(GPR_U32(ctx, 4), 44), GPR_U32(ctx, 0));
+    // 0x41f0b4: 0xac80001c  sw          $zero, 0x1C($a0)
+    ctx->pc = 0x41f0b4u;
+    WRITE32(ADD32(GPR_U32(ctx, 4), 28), GPR_U32(ctx, 0));
+    // 0x41f0b8: 0x3e00008  jr          $ra
+    ctx->pc = 0x41F0B8u;
+    {
+        uint32_t jumpTarget = GPR_U32(ctx, 31);
+        ctx->pc = 0x41F0BCu;
+        ctx->in_delay_slot = true; ctx->branch_pc = 0x41F0B8u;
+            // 0x41f0bc: 0xac80000c  sw          $zero, 0xC($a0) (Delay Slot)
+        WRITE32(ADD32(GPR_U32(ctx, 4), 12), GPR_U32(ctx, 0));
+        ctx->in_delay_slot = false;
+        ctx->pc = jumpTarget;
+        return;
+    }
+    ctx->pc = 0x41F0C0u;
+}

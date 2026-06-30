@@ -1,0 +1,36 @@
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include "ps2_recompiled_functions.h"
+#include "ps2_recompiled_stubs.h"
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: sub_00160500
+// Address: 0x160500 - 0x160510
+void sub_00160500_0x160500(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("sub_00160500_0x160500");
+#endif
+
+    ctx->pc = 0x160500u;
+
+    // 0x160500: 0x3e00008  jr          $ra
+    ctx->pc = 0x160500u;
+    {
+        uint32_t jumpTarget = GPR_U32(ctx, 31);
+        ctx->pc = jumpTarget;
+        return;
+    }
+    ctx->pc = 0x160508u;
+    // 0x160508: 0x0  nop
+    ctx->pc = 0x160508u;
+    // NOP
+    // 0x16050c: 0x0  nop
+    ctx->pc = 0x16050cu;
+    // NOP
+}

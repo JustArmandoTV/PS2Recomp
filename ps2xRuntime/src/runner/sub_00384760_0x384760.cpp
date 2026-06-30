@@ -1,0 +1,41 @@
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include "ps2_recompiled_functions.h"
+#include "ps2_recompiled_stubs.h"
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: sub_00384760
+// Address: 0x384760 - 0x384770
+void sub_00384760_0x384760(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("sub_00384760_0x384760");
+#endif
+
+    ctx->pc = 0x384760u;
+
+    // 0x384760: 0x3e00008  jr          $ra
+    ctx->pc = 0x384760u;
+    {
+        uint32_t jumpTarget = GPR_U32(ctx, 31);
+        ctx->pc = 0x384764u;
+        ctx->in_delay_slot = true; ctx->branch_pc = 0x384760u;
+            // 0x384764: 0x248203a0  addiu       $v0, $a0, 0x3A0 (Delay Slot)
+        SET_GPR_S32(ctx, 2, (int32_t)ADD32(GPR_U32(ctx, 4), 928));
+        ctx->in_delay_slot = false;
+        ctx->pc = jumpTarget;
+        return;
+    }
+    ctx->pc = 0x384768u;
+    // 0x384768: 0x0  nop
+    ctx->pc = 0x384768u;
+    // NOP
+    // 0x38476c: 0x0  nop
+    ctx->pc = 0x38476cu;
+    // NOP
+}
